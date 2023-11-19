@@ -2,6 +2,7 @@
 # $2 for port
 # $3 for pairing code
 # $4 for adress
+export ANDROID_HOME="../../usr/share/android-sdk/"
 unzip wwwfactory.zip
 cd wwwfactory
 echo "package com.wwwfactory
