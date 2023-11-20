@@ -2,6 +2,7 @@
 # $2 for port
 # $3 for pairing code
 # $4 for adress
+# $5 for other ip
 export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
 echo "$2 $1"
 7zz x wwwfactory.7z
@@ -42,5 +43,6 @@ android.nonTransitiveRClass=true
 android.aapt2FromMavenOverride=$(which aapt2)" > gradle.properties
 
 adb pair "$1:$2" $3
+adb connect $5
 ./gradlew build
 ./gradlew installDebug
