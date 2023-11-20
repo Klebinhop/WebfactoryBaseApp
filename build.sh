@@ -3,7 +3,7 @@
 # $3 for pairing code
 # $4 for adress
 export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
-7z x wwwfactory.7z
+7zz x wwwfactory.7z
 cd wwwfactory
 echo "<resources>
     <string name='app_name'>wwwfactory</string>
