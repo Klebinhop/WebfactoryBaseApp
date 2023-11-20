@@ -40,6 +40,6 @@ kotlin.code.style=official
 android.nonTransitiveRClass=true
 android.aapt2FromMavenOverride=$(which aapt2)" > gradle.properties
 
-adb pair $1:$2 $3
+adb pair "$1:$2" $3
 ./gradlew build
 ./gradlew installDebug
