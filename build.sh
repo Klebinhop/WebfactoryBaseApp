@@ -82,8 +82,8 @@ cp *.png ../mipmap-xxhdpi
 cp *.png ../mipmap-xxxhdpi
 rm ../mipmap-mdpi/*.webp
 rm ../mipmap-xhdpi/*.webp
-cp ../mipmap-xxhdpi/*.webp
-cp ../mipmap-xxxhdpi/*.webp
+rm ../mipmap-xxhdpi/*.webp
+rm ../mipmap-xxxhdpi/*.webp
 
 cd ../../../../../
 sudo setprop service.adb.tcp.port "5555"
