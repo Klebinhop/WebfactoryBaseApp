@@ -1,4 +1,7 @@
-pkg install wget aapt2 android-tools 7zip
+# $1 for Web Adress
+# $2 for Site Name
+
+pkg install wget aapt2 android-tools 7zip tsu
 function configuration_ {
     wget https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk-aarch64.zip
     unzip android-sdk-aarch64.zip -d $PREFIX/share
@@ -17,7 +20,7 @@ export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
 cd wwwfactory
 
 echo "<resources>
-    <string name='app_name'>wwwfactory</string>
+    <string name='app_name'>$2</string>
     <string name='Web_Adress'>$1</string>
 </resources>" > app/src/main/res/values/strings.xml
 
@@ -51,6 +54,18 @@ kotlin.code.style=official
 android.nonTransitiveRClass=true
 android.aapt2FromMavenOverride=$(which aapt2)" > gradle.properties
 
+echo '<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@mipmap/ic_launcher_background"/>
+    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+</adaptive-icon>' > app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+
+cd app/src/main/res/mipmap-hdpi
+wget "$2/favicon.ico"
+mv favicon.ico ic_launcher.ico
+cp ic_launcher.ico ic_launcher_round.ico
+
+cd ../../../../../
 sudo setprop service.adb.tcp.port "5555"
 sudo stop adbd
 sudo start adbd
