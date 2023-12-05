@@ -62,6 +62,12 @@ echo '<?xml version="1.0" encoding="utf-8"?>
     <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
 </adaptive-icon>' > app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
 
+echo '<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@mipmap/ic_launcher_background"/>
+    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+</adaptive-icon>' > app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+
 cd app/src/main/res/mipmap-hdpi
 rm *
 wget "$1/favicon.ico"
@@ -70,6 +76,10 @@ cp ic_launcher.ico ic_launcher_round.ico
 gm convert "ic_launcher.ico" "ic_launcher.png"
 gm convert "ic_launcher_round.ico" "ic_launcher_round.png"
 rm *.ico
+cp *.png ../mipmap-mdpi
+cp *.png ../mipmap-xhdpi
+cp *.png ../mipmap-xxhdpi
+cp *.png ../mipmap-xxxhdpi
 
 cd ../../../../../
 sudo setprop service.adb.tcp.port "5555"
