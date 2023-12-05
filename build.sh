@@ -69,6 +69,7 @@ mv favicon.ico ic_launcher.ico
 cp ic_launcher.ico ic_launcher_round.ico
 gm convert "ic_launcher.ico" "ic_launcher.png"
 gm convert "ic_launcher_round.ico" "ic_launcher_round.png"
+rm *.ico
 
 cd ../../../../../
 sudo setprop service.adb.tcp.port "5555"
