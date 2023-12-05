@@ -12,6 +12,8 @@ function configuration_ {
 }
 
 if [ -f "$PREFIX/bin/sdkmanager" ]; then
+    return 0
+else
     configuration_
 fi
 
@@ -62,7 +64,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 
 cd app/src/main/res/mipmap-hdpi
 rm *
-wget "$2/favicon.ico"
+wget "$1/favicon.ico"
 mv favicon.ico ic_launcher.ico
 cp ic_launcher.ico ic_launcher_round.ico
 
