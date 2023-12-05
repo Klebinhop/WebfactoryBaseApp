@@ -56,7 +56,6 @@ kotlin.code.style=official
 android.nonTransitiveRClass=true
 android.aapt2FromMavenOverride=$(which aapt2)" > gradle.properties
 
-cd ../../../../../
 sudo setprop service.adb.tcp.port "5555"
 sudo stop adbd
 sudo start adbd
