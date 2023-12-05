@@ -1,7 +1,7 @@
 # $1 for Web Adress
 # $2 for Site Name
 
-pkg install wget aapt2 android-tools 7zip tsu imagemagick
+pkg install wget aapt2 android-tools 7zip tsu graphicsmagick
 function configuration_ {
     wget https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk-aarch64.zip
     unzip android-sdk-aarch64.zip -d $PREFIX/share
@@ -67,8 +67,8 @@ rm *
 wget "$1/favicon.ico"
 mv favicon.ico ic_launcher.ico
 cp ic_launcher.ico ic_launcher_round.ico
-convert "ic_launcher.ico" "ic_launcher.png"
-convert "ic_launcher_round.ico" "ic_launcher_round.png"
+gm convert "ic_launcher.ico" "ic_launcher.png"
+gm convert "ic_launcher_round.ico" "ic_launcher_round.png"
 
 cd ../../../../../
 sudo setprop service.adb.tcp.port "5555"
