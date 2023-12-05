@@ -1,12 +1,22 @@
-# $1 for ip
-# $2 for port
-# $3 for pairing code
-# $4 for adress
-# $5 for other ip
+pkg install wget aapt2 android-tools 7zip
+function configuration_ {
+    wget https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk-aarch64.zip
+    unzip android-sdk-aarch64.zip -d $PREFIX/share
+    echo '#!/data/data/com.termux/files/usr/bin/bash
+
+/data/data/com.termux/files/usr/share/android-sdk/tools/bin/sdkmanager \
+--sdk_root=/data/data/com.termux/files/usr/share/android-sdk "$@"' > $PREFIX/bin/sdkmanager
+}
+
+if [ -f "$PREFIX/bin/sdkmanager" ]; then
+    configuration_
+fi
+
 export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
 echo "$2 $1"
 7zz x wwwfactory.7z
 cd wwwfactory
+
 echo "<resources>
     <string name='app_name'>wwwfactory</string>
     <string name='Web_Adress'>$4</string>
