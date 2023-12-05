@@ -61,6 +61,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>
 </adaptive-icon>' > app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
 
 cd app/src/main/res/mipmap-hdpi
+rm *
 wget "$2/favicon.ico"
 mv favicon.ico ic_launcher.ico
 cp ic_launcher.ico ic_launcher_round.ico
