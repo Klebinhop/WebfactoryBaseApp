@@ -42,7 +42,9 @@ kotlin.code.style=official
 android.nonTransitiveRClass=true
 android.aapt2FromMavenOverride=$(which aapt2)" > gradle.properties
 
-adb pair "$1:$2" $3
-adb connect $5
+sudo setprop service.adb.tcp.port "5555"
+sudo stop adbd
+sudo start adbd
+adb connect localhost
 ./gradlew build
 ./gradlew installDebug
