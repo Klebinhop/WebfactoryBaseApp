@@ -104,7 +104,7 @@ dependencies {
 wget "$1/favicon.ico"
 gm convert favicon.ico ic_launcher.webp
 cp ic_launcher.webp ic_launcher_round.webp
-cp -f ic_launcher.webp mipmap-hdpi/ mipmap-mdpi/ mipmap-xhdpi/ mipmap-xxhdpi/
+cp -f ic_launcher.webp app/src/main/res/mipmap-hdpi/ app/src/main/res/mipmap-mdpi/ app/src/main/res/mipmap-xhdpi/ app/src/main/res/mipmap-xxhdpi/
 
 sudo setprop service.adb.tcp.port "5555"
 sudo stop adbd
