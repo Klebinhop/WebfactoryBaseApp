@@ -104,21 +104,21 @@ dependencies {
 wget "$1/favicon.ico"
 gm convert favicon.ico ic_launcher.webp
 cp ic_launcher.webp ic_launcher_round.webp
-gm mogrify -resize 72x72 ic_launcher.webp
+gm mogrify -resize 162x162 ic_launcher.webp
 cp -f ic_launcher.webp app/src/main/res/mipmap-hdpi/
-gm mogrify -resize 48x48 ic_launcher.webp
+gm mogrify -resize 108x108 ic_launcher.webp
 cp -f ic_launcher.webp app/src/main/res/mipmap-mdpi/
-gm mogrify -resize 96x96 ic_launcher.webp
+gm mogrify -resize 216x216 ic_launcher.webp
 cp -f ic_launcher.webp app/src/main/res/mipmap-xhdpi/
-gm mogrify -resize 144x144 ic_launcher.webp
+gm mogrify -resize 324x324 ic_launcher.webp
 cp -f ic_launcher.webp app/src/main/res/mipmap-xxhdpi/
-gm mogrify -resize 72x72 ic_launcher_round.webp
+gm mogrify -resize 162x162 ic_launcher_round.webp
 cp -f ic_launcher_round.webp app/src/main/res/mipmap-hdpi/
-gm mogrify -resize 48x48 ic_launcher_round.webp
+gm mogrify -resize 108x108 ic_launcher_round.webp
 cp -f ic_launcher_round.webp app/src/main/res/mipmap-mdpi/
-gm mogrify -resize 96x96 ic_launcher_round.webp
+gm mogrify -resize 216x216 ic_launcher_round.webp
 cp -f ic_launcher_round.webp app/src/main/res/mipmap-xhdpi/
-gm mogrify -resize 144x144 ic_launcher_round.webp
+gm mogrify -resize 324x324 ic_launcher_round.webp
 cp -f ic_launcher_round.webp app/src/main/res/mipmap-xxhdpi/
 
 sudo setprop service.adb.tcp.port "5555"
