@@ -103,7 +103,28 @@ dependencies {
 
 wget "$1/favicon.ico"
 gm convert favicon.ico ic_launcher_foreground.webp
-cp ic_launcher_foreground.webp ic_launcher_background.webp
+cp ic_launcher_foreground.webp ic_launcher_round.webp
+cp ic_launcher_round.webp ic_launcher.webp
+cp ic_launcher_round.webp ic_launcher_background.webp
+
+gm mogrify -resize 162x162 ic_launcher.webp
+cp -f ic_launcher.webp app/src/main/res/mipmap-hdpi/
+gm mogrify -resize 108x108 ic_launcher.webp
+cp -f ic_launcher.webp app/src/main/res/mipmap-mdpi/
+gm mogrify -resize 216x216 ic_launcher.webp
+cp -f ic_launcher.webp app/src/main/res/mipmap-xhdpi/
+gm mogrify -resize 324x324 ic_launcher.webp
+cp -f ic_launcher.webp app/src/main/res/mipmap-xxhdpi/
+
+gm mogrify -resize 162x162 ic_launcher_round.webp
+cp -f ic_launcher_round.webp app/src/main/res/mipmap-hdpi/
+gm mogrify -resize 108x108 ic_launcher_round.webp
+cp -f ic_launcher_round.webp app/src/main/res/mipmap-mdpi/
+gm mogrify -resize 216x216 ic_launcher_round.webp
+cp -f ic_launcher_round.webp app/src/main/res/mipmap-xhdpi/
+gm mogrify -resize 324x324 ic_launcher_round.webp
+cp -f ic_launcher_round.webp app/src/main/res/mipmap-xxhdpi/
+
 gm mogrify -resize 162x162 ic_launcher_foreground.webp
 cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-hdpi/
 gm mogrify -resize 108x108 ic_launcher_foreground.webp
@@ -112,6 +133,7 @@ gm mogrify -resize 216x216 ic_launcher_foreground.webp
 cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-xhdpi/
 gm mogrify -resize 324x324 ic_launcher_foreground.webp
 cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-xxhdpi/
+
 gm mogrify -resize 162x162 ic_launcher_background.webp
 cp -f ic_launcher_background.webp app/src/main/res/mipmap-hdpi/
 gm mogrify -resize 108x108 ic_launcher_background.webp
