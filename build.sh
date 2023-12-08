@@ -107,7 +107,7 @@ cp ic_launcher_foreground.webp ic_launcher_background.webp
 gm mogrify -resize 162x162 ic_launcher_foreground.webp
 cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-hdpi/
 gm mogrify -resize 108x108 ic_launcher_foreground.webp
-cp -f ic_launcher.webp app/src/main/res/mipmap-mdpi/
+cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-mdpi/
 gm mogrify -resize 216x216 ic_launcher_foreground.webp
 cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-xhdpi/
 gm mogrify -resize 324x324 ic_launcher_foreground.webp
