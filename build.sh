@@ -51,7 +51,7 @@ android.useAndroidX=true
 # Kotlin code style for this project: 'official' or 'obsolete':
 kotlin.code.style=official
 # Enables namespacing of each library's R class so that its R class includes only the
-# resources declared in the library itself and none from the library's dependencies,
+# resources declared in the library itself and none from the library's dependencies,round
 # thereby reducing the size of the R class for that library
 android.nonTransitiveRClass=true
 android.aapt2FromMavenOverride=$(which aapt2)" > gradle.properties
@@ -103,6 +103,8 @@ dependencies {
 
 wget "$1/favicon.ico"
 gm convert favicon.ico ic_launcher_foreground.webp
+gm convert ic_launcher_foreground.webp ic_launcher-playstore.png
+cp -f ic_launcher_playstore.png app/src/main/
 cp ic_launcher_foreground.webp ic_launcher_round.webp
 cp ic_launcher_round.webp ic_launcher.webp
 cp ic_launcher_round.webp ic_launcher_background.webp
