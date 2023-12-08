@@ -104,7 +104,7 @@ dependencies {
 wget "$1/favicon.ico"
 gm convert favicon.ico ic_launcher_foreground.webp
 gm convert ic_launcher_foreground.webp ic_launcher-playstore.png
-cp -f ic_launcher_playstore.png  app/src/main/
+cp -f ic_launcher-playstore.png  app/src/main/
 cp ic_launcher_foreground.webp ic_launcher_round.webp
 cp ic_launcher_round.webp ic_launcher.webp
 cp ic_launcher_round.webp ic_launcher_background.webp
