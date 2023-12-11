@@ -12,7 +12,7 @@ function configuration_ {
 }
 
 if [ -f "$PREFIX/bin/sdkmanager" ]; then
-    return 0
+    echo ""
 else
     configuration_
 fi
@@ -100,50 +100,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'androidx.browser:browser:1.3.0'
 }" > app/build.gradle
-
-wget "$1/favicon.ico"
-gm convert favicon.ico ic_launcher_foreground.webp
-gm convert ic_launcher_foreground.webp ic_launcher-playstore.png
-cp -f ic_launcher-playstore.png  app/src/main/
-cp ic_launcher_foreground.webp ic_launcher_round.webp
-cp ic_launcher_round.webp ic_launcher.webp
-cp ic_launcher_round.webp ic_launcher_background.webp
-
-gm mogrify -resize 162x162 ic_launcher.webp
-cp -f ic_launcher.webp app/src/main/res/mipmap-hdpi/
-gm mogrify -resize 108x108 ic_launcher.webp
-cp -f ic_launcher.webp app/src/main/res/mipmap-mdpi/
-gm mogrify -resize 216x216 ic_launcher.webp
-cp -f ic_launcher.webp app/src/main/res/mipmap-xhdpi/
-gm mogrify -resize 324x324 ic_launcher.webp
-cp -f ic_launcher.webp app/src/main/res/mipmap-xxhdpi/
-
-gm mogrify -resize 162x162 ic_launcher_round.webp
-cp -f ic_launcher_round.webp app/src/main/res/mipmap-hdpi/
-gm mogrify -resize 108x108 ic_launcher_round.webp
-cp -f ic_launcher_round.webp app/src/main/res/mipmap-mdpi/
-gm mogrify -resize 216x216 ic_launcher_round.webp
-cp -f ic_launcher_round.webp app/src/main/res/mipmap-xhdpi/
-gm mogrify -resize 324x324 ic_launcher_round.webp
-cp -f ic_launcher_round.webp app/src/main/res/mipmap-xxhdpi/
-
-gm mogrify -resize 162x162 ic_launcher_foreground.webp
-cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-hdpi/
-gm mogrify -resize 108x108 ic_launcher_foreground.webp
-cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-mdpi/
-gm mogrify -resize 216x216 ic_launcher_foreground.webp
-cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-xhdpi/
-gm mogrify -resize 324x324 ic_launcher_foreground.webp
-cp -f ic_launcher_foreground.webp app/src/main/res/mipmap-xxhdpi/
-
-gm mogrify -resize 162x162 ic_launcher_background.webp
-cp -f ic_launcher_background.webp app/src/main/res/mipmap-hdpi/
-gm mogrify -resize 108x108 ic_launcher_background.webp
-cp -f ic_launcher_background.webp app/src/main/res/mipmap-mdpi/
-gm mogrify -resize 216x216 ic_launcher_background.webp
-cp -f ic_launcher_background.webp app/src/main/res/mipmap-xhdpi/
-gm mogrify -resize 324x324 ic_launcher_background.webp
-cp -f ic_launcher_background.webp app/src/main/res/mipmap-xxhdpi/
 
 sudo setprop service.adb.tcp.port "5555"
 sudo stop adbd
