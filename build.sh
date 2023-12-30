@@ -1,17 +1,14 @@
 # $1 for Web Adress
 # $2 for Site Name
 
-pkg install wget aapt2 android-tools 7zip tsu graphicsmagick -y
-function configuration_ {
-    wget https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk-aarch64.zip
-    unzip android-sdk-aarch64.zip -d $PREFIX/share
-    echo '#!/data/data/com.termux/files/usr/bin/bash
+pkg install wget aapt2 android-tools 7zip tsu graphicsmagick which -y
+
+wget https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk-aarch64.zip
+unzip android-sdk-aarch64.zip -d $PREFIX/share
+echo '#!/data/data/com.termux/files/usr/bin/bash
 
 /data/data/com.termux/files/usr/share/android-sdk/tools/bin/sdkmanager \
 --sdk_root=/data/data/com.termux/files/usr/share/android-sdk "$@"' > $PREFIX/bin/sdkmanager
-}
-
-configuration_
 
 export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
 7zz x wwwfactory.7z
