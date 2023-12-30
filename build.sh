@@ -1,7 +1,7 @@
 # $1 for Web Adress
 # $2 for Site Name
 
-pkg install wget aapt2 android-tools 7zip tsu graphicsmagick
+pkg install wget aapt2 android-tools 7zip tsu graphicsmagick -y
 function configuration_ {
     wget https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk-aarch64.zip
     unzip android-sdk-aarch64.zip -d $PREFIX/share
