@@ -11,8 +11,11 @@ function configuration_ {
 --sdk_root=/data/data/com.termux/files/usr/share/android-sdk "$@"' > $PREFIX/bin/sdkmanager
 }
 
-if [ -f "$PREFIX/bin/sdkmanager" ]; then
-    echo ""
+sdkmanager
+
+if [ $? = 0 ]
+then
+    print ""
 else
     configuration_
 fi
