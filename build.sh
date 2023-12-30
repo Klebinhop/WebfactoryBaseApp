@@ -11,14 +11,7 @@ function configuration_ {
 --sdk_root=/data/data/com.termux/files/usr/share/android-sdk "$@"' > $PREFIX/bin/sdkmanager
 }
 
-sdkmanager
-
-if [ $? = 0 ]
-then
-    print ""
-else
-    configuration_
-fi
+configuration_
 
 export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
 7zz x wwwfactory.7z
