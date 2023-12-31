@@ -102,4 +102,3 @@ sudo start adbd
 adb connect localhost
 ./gradlew build
 ./gradlew installDebug
-rm -rf WebFactoryBaseApp*
