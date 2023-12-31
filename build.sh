@@ -13,6 +13,7 @@ echo '#!/data/data/com.termux/files/usr/bin/bash
 export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
 7zz x wwwfactory.7z
 cd wwwfactory
+pwd
 
 echo "<resources>
     <string name='app_name'>$2</string>
