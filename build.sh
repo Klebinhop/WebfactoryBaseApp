@@ -102,3 +102,4 @@ sudo start adbd
 adb connect localhost
 ./gradlew build
 ./gradlew installDebug
+sleep 20
