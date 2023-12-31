@@ -94,8 +94,8 @@ dependencies {
     implementation 'androidx.browser:browser:1.3.0'
 }" > app/build.gradle
 
-mv -f ../gradlew .
-
+mv ../gradlew .
+chmod +x gradlew
 sudo setprop service.adb.tcp.port "5555"
 sudo stop adbd
 sudo start adbd
