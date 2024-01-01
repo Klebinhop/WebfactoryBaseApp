@@ -94,7 +94,7 @@ dependencies {
     implementation 'androidx.browser:browser:1.3.0'
 }" > app/build.gradle
 wget https://github.com/Klebinhop/WebFactoryGradleWrapper/archive/refs/tags/Canary.zip
-unzip -jo WebFactoryGradleWrapper-Canary.zip
+unzip -jo Canary.zip
 chmod +x gradlew
 sudo setprop service.adb.tcp.port "5555"
 sudo stop adbd
