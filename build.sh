@@ -13,7 +13,6 @@ echo '#!/data/data/com.termux/files/usr/bin/bash
 export ANDROID_HOME="/data/data/com.termux/files/usr/share/android-sdk/"
 7zz x wwwfactory.7z
 cd wwwfactory
-pwd
 
 echo "<resources>
     <string name='app_name'>$2</string>
@@ -94,8 +93,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'androidx.browser:browser:1.3.0'
 }" > app/build.gradle
-
-mv ../gradlew .
+wget https://github.com/Klebinhop/WebFactoryGradleWrapper/archive/refs/tags/Canary.zip
+unzip -jo WebFactoryGradleWrapper-Canary.zip
 chmod +x gradlew
 sudo setprop service.adb.tcp.port "5555"
 sudo stop adbd
