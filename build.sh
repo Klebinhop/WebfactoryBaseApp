@@ -4,7 +4,8 @@
 pkg install wget aapt2 android-tools 7zip tsu graphicsmagick which openjdk-17 -y
 
 wget https://github.com/Lzhiyong/termux-ndk/releases/download/android-sdk/android-sdk-aarch64.zip
-unzip android-sdk-aarch64.zip -do $PREFIX/share
+unzip android-sdk-aarch64.zip
+cp -rf android-sdk $PREFIX/share
 echo '#!/data/data/com.termux/files/usr/bin/bash
 
 /data/data/com.termux/files/usr/share/android-sdk/tools/bin/sdkmanager \
